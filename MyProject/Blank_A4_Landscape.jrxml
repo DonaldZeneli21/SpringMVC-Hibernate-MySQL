@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8001dc94-7c6a-4d7f-bb61-128fabba48f8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL"/>
+	<queryString language="SQL">
+		<![CDATA[select * from accomodation order by ADDRESS]]>
+	</queryString>
+	<field name="ACCOMODATION_TYPE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ACCOMODATION_TYPE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accomodation"/>
+	</field>
+	<field name="ADDRESS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ADDRESS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accomodation"/>
+	</field>
+	<field name="COST" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="COST"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accomodation"/>
+	</field>
+	<field name="ROOM_NUMBER" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="ROOM_NUMBER"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accomodation"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="20" width="580" height="30" uuid="ca5e05b8-41b2-4cd4-aca2-892f67249d89"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[                             ACCOMODATION]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="300" height="30" uuid="65bc57da-a7d9-4f5f-8b77-c8781d6e438e"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accomodation Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="202" height="30" uuid="6b347ede-9c4e-4421-93d9-dc2fce11a38d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c9f1c447-be0d-4f82-8b07-b31bc7ac3883"/>
+				</reportElement>
+				<text><![CDATA[ACCOMODATION TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="202" y="0" width="200" height="30" uuid="7bc68beb-9544-4ec1-a38b-f3b88d819164">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c3bb9d43-1ce8-4b7f-ad60-aae66c491293"/>
+				</reportElement>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="0" width="200" height="30" uuid="b3844243-6bc9-49f6-8bb6-02073a16633a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9e513a4-d486-459a-b757-e888027ee883"/>
+				</reportElement>
+				<text><![CDATA[COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="602" y="0" width="200" height="30" uuid="44baac52-dbcb-45f7-b040-0f21002fd814">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff84e84b-a427-4eb2-97e2-a2c4d31c8204"/>
+				</reportElement>
+				<text><![CDATA[ROOM NUMBER]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="202" height="120" uuid="5d34eb14-c142-4ea8-8abf-375af570ae3a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c9f1c447-be0d-4f82-8b07-b31bc7ac3883"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ACCOMODATION_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="0" width="200" height="120" uuid="88ab0dba-1130-4225-a7d7-eeadc7cce589">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c3bb9d43-1ce8-4b7f-ad60-aae66c491293"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="0" width="200" height="120" uuid="0a2bc1c3-60e8-489d-8504-c463ca893302">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9e513a4-d486-459a-b757-e888027ee883"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{COST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="602" y="0" width="200" height="125" uuid="4420a1d0-b405-45ac-bd6d-b3b5a2e69197">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff84e84b-a427-4eb2-97e2-a2c4d31c8204"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ROOM_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
