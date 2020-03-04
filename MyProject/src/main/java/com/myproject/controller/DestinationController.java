@@ -143,6 +143,6 @@ public class DestinationController {
 			return ResponseEntity.ok().body(list);
 		}
 	 
-		/* Test */
+		/* Test 1*/
 		
 }
