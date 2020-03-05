@@ -133,7 +133,7 @@ public class DestinationController {
 		return ResponseEntity.ok().headers(headers).body(new InputStreamResource(in));
 	}
 	
-	    /* CriteriaQuery */
+	    /* CriteriaQuery Pagination*/
 		@GetMapping("/getDestinationsPaged")
 		public ResponseEntity<List<Destination>> getDestinationsPaged(
 				@RequestParam(defaultValue = "0") Integer pageNo,
@@ -143,7 +143,7 @@ public class DestinationController {
 			return ResponseEntity.ok().body(list);
 		}
 	 
-		/* CriteriaQuery */
+		/* CriteriaQuery Pagination With Order*/
 		@GetMapping("/getDestinationsPagedWithOrder")
 		public ResponseEntity<List<Destination>> getDestinationsPagedWithOrder(
 				@RequestParam(defaultValue = "0") Integer pageNo,
