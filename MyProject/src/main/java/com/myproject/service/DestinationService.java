@@ -24,5 +24,7 @@ public interface DestinationService {
 	public List<Destination> destinationTravel();
 	
 	public List<Destination> getPagedDestinations(Integer pageNo, Integer pageSize);
+	
+	List<Destination> getPagedDestinationsWithOrder(Integer pageNo, Integer pageSize, String sortBy);
 
 }

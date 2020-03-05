@@ -75,7 +75,7 @@ public class DestinationController {
 	
 	
 	/*
-	 * test for named queries and HQL 
+	 * Named queries, HQL and Criteria Queries(Pagination) 
 	 */
 	
 	 /* HQL */
@@ -143,6 +143,15 @@ public class DestinationController {
 			return ResponseEntity.ok().body(list);
 		}
 	 
-		/* Test 1*/
+		/* CriteriaQuery */
+		@GetMapping("/getDestinationsPagedWithOrder")
+		public ResponseEntity<List<Destination>> getDestinationsPagedWithOrder(
+				@RequestParam(defaultValue = "0") Integer pageNo,
+				@RequestParam(defaultValue = "10") Integer pageSize,
+				@RequestParam(defaultValue = "id") String sortBy) {
+
+			List<Destination> list = service.getPagedDestinationsWithOrder(pageNo, pageSize, sortBy);
+			return ResponseEntity.ok().body(list);
+		}
 		
 }

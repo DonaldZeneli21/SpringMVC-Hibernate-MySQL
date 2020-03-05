@@ -116,14 +116,29 @@ public class DestinationDaoImpl implements DestinationDao {
 		cq.select(root);
 		
 		Query<Destination> query = session.createQuery(cq);
+		
 		query.setFirstResult((pageNo - 1) * pageSize);
         query.setMaxResults(pageSize); 
+     
         List<Destination> employees = query.getResultList();
 		return employees;
 	}
-
-
 	
-	
+	@Override
+	public List<Destination> getPagedDestinationsWithOrder(Integer pageNo, Integer pageSize, String sortBy) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		CriteriaBuilder cb = session.getCriteriaBuilder();
+		CriteriaQuery<Destination> cq = cb.createQuery(Destination.class);
+		Root<Destination> root = cq.from(Destination.class);
+		cq.select(root).orderBy(cb.asc(root.get(sortBy)));
 
+		Query<Destination> query = session.createQuery(cq);
+		
+		query.setFirstResult((pageNo - 1) * pageSize);
+        query.setMaxResults(pageSize); 
+     
+        List<Destination> destinations = query.getResultList();
+		return destinations;
+	}
 }

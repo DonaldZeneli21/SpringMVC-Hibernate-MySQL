@@ -89,20 +89,15 @@ public class AccomodationDaoImpl implements AccomodationDao {
 
 	@Override
 	public List<Accomodation> getAccomByCriteriaQuery() {
-		/*
-		 * . where( (Expression<Boolean>) Restrictions.gt("cost", 50));
-		 */
-
+		
 		CriteriaBuilder builder = sessionFactory.getCriteriaBuilder();
 		CriteriaQuery<Accomodation> criteriaQuery = builder.createQuery(Accomodation.class);
 		Root<Accomodation> root = criteriaQuery.from(Accomodation.class);
-	
 		criteriaQuery.select(root);
 	
-		
-		
 		Query<Accomodation> query = sessionFactory.getCurrentSession().createQuery(criteriaQuery);
 		List<Accomodation> list = query.list();
+		
 		return list;
 	}
 

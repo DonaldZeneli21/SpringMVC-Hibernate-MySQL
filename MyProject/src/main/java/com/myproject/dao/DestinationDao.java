@@ -24,4 +24,6 @@ public interface DestinationDao {
 	// Criteria Query for pagination
 	public List<Destination> getPagedDestinations(Integer pageNo, Integer pageSize);
 
+	List<Destination> getPagedDestinationsWithOrder(Integer pageNo, Integer pageSize, String sortBy);
+
 }

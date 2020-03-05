@@ -78,6 +78,12 @@ public class DestinationServiceImpl implements DestinationService{
 		return dao.getPagedDestinations(pageNo, pageSize);
 	}
 
+	@Override
+	public List<Destination> getPagedDestinationsWithOrder(Integer pageNo, Integer pageSize,String sortBy) {
+
+		return dao.getPagedDestinationsWithOrder(pageNo, pageSize, sortBy);
+	}
+
 	
 
 
