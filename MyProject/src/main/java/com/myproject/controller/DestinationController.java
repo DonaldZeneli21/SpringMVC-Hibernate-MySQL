@@ -40,7 +40,6 @@ public class DestinationController {
 		return ResponseEntity.ok(destination);
 	}
 
-	
 	/* add new destination */
 	@PostMapping("/addDestination")
 	public ResponseEntity<?> save(@RequestBody Destination destination) {
